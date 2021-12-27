@@ -1,0 +1,70 @@
+$cornerPinIndex: 6px;
+#spyne-plugin-console {
+
+  #spyne-plugin-console-content-holder {
+
+    .corner-pin {
+      pointer-events: all;
+      opacity: .3;
+
+      svg {
+        #selected {
+          opacity: 0;
+
+        }
+
+      }
+    }
+
+    #console-ui-corners-container {
+
+      div.corner-pin {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+
+          svg {
+            circle#selected {
+              opacity: 1;
+              transition: all .25s ease;
+            }
+          }
+
+        }
+
+        svg {
+        }
+
+        &.top.left {
+          left: $cornerPinIndex;
+          top: $cornerPinIndex;
+          transform: rotateX(180deg);
+
+        }
+
+        &.top.right {
+          right: $cornerPinIndex;
+          top: $cornerPinIndex;
+          transform: rotate(180deg);
+
+        }
+
+        &.bottom.left {
+          bottom: $cornerPinIndex;
+          left: $cornerPinIndex;
+        }
+
+        &.bottom.right {
+          bottom: $cornerPinIndex;
+          right: $cornerPinIndex;
+          transform: rotateY(-180deg);
+
+        }
+      }
+    }
+  }
+}

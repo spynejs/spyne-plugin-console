@@ -1,0 +1,47 @@
+{
+  "action": "CHANNEL_ROUTE_CHANGE_EVENT",
+  "payload": {
+    "isDeepLink": false,
+    "routeCount": 2,
+    "desc": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.",
+    "url_path": "https://marketwatch.com/purus/eu/magna/vulputate.xml?ut=donec&odio=odio&cras=justo&mi=sollicitudin&pede=ut&malesuada=suscipit&in=a&imperdiet=feugiat&et=et&commodo=eros&vulputate=vestibulum&justo=ac&in=est&blandit=lacinia&ultrices=nisi&enim=venenatis&lorem=tristique&ipsum=fusce&dolor=congue&sit=diam&amet=id&consectetuer=ornare&adipiscing=imperdiet&elit=sapien&proin=urna&interdum=pretium&mauris=nisl&non=ut&ligula=volutpat&pellentesque=sapien&ultrices=arcu&phasellus=sed&id=augue&sapien=aliquam&in=erat&sapien=volutpat&iaculis=in&congue=congue&vivamus=etiam&metus=justo&arcu=etiam&adipiscing=pretium&molestie=iaculis",
+    "pathInnermost": "topicId",
+    "paths": [
+      "pageId",
+      "topicId"
+    ],
+    "routeData": {
+      "pageId": "menu-5",
+      "topicId": "sub-menu-5",
+      "eventPreventDefault": "true",
+      "navLevel": "2"
+    },
+    "routeValue": "menu-5/sub-menu-5",
+    "pathsAdded": [
+      "topicId"
+    ],
+    "pathsRemoved": [
+    ],
+    "pathsChanged": [
+      "topicId"
+    ]
+  },
+  "event": {
+    "clientX": 355.643310546875,
+    "clientY": 574.259765625,
+    "bubbles": true,
+    "screenY": 800.259765625,
+    "screenX": 529.643310546875,
+    "x": 355.643310546875,
+    "y": 574.259765625,
+    "type": "click"
+  },
+  "srcElement": {
+    "id": "vwfiptt",
+    "vsid": "vwfiptt",
+    "isLocalEvent": false,
+    "srcEvent": "click",
+    "el": {
+    }
+  }
+}

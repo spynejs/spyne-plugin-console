@@ -1,0 +1,235 @@
+$handleWidth: 1rem;
+$dragOpacity: 0; //.5;
+$z-index-drag: 1000000000;
+#spyne-plugin-console {
+
+  #spyne-plugin-console-content-holder {
+
+    &.top {
+      .drag-handle.side.bottom {
+        pointer-events: all;
+      }
+    }
+
+    &.right {
+      .drag-handle.side.left {
+        pointer-events: all;
+      }
+    }
+
+    &.bottom {
+      .drag-handle.side.top {
+        pointer-events: all;
+      }
+    }
+
+    &.left {
+      .drag-handle.side.right {
+        pointer-events: all;
+      }
+    }
+
+    &.top.right {
+      .corner-pin.top.right {
+        pointer-events: none;
+
+        svg {
+          rect {
+            opacity: .2;
+          }
+
+          circle#selected {
+            opacity: .5;
+          }
+        }
+
+      }
+
+      .drag-handle.corner.bottom-left {
+        pointer-events: all;
+      }
+    }
+
+    &.top.left {
+      .corner-pin.top.left {
+        pointer-events: none;
+
+        svg {
+          rect {
+            opacity: .2;
+          }
+
+          circle#selected {
+            opacity: .5;
+          }
+        }
+
+      }
+
+      .drag-handle.corner.bottom-right {
+        pointer-events: all;
+      }
+    }
+
+    &.bottom.right {
+      .corner-pin.bottom.right {
+        pointer-events: none;
+
+        svg {
+          rect {
+            opacity: .2;
+          }
+
+          circle#selected {
+            opacity: .5;
+          }
+        }
+
+      }
+
+      .drag-handle.corner.top-left {
+        pointer-events: all;
+      }
+    }
+
+    &.bottom.left {
+
+      div.corner-pin.bottom.left {
+        pointer-events: none;
+        opacity: 1;
+
+        svg {
+          rect {
+            opacity: .2;
+          }
+
+          circle#selected {
+            opacity: .5;
+          }
+        }
+
+      }
+
+      .drag-handle.corner.top-right {
+        pointer-events: all;
+      }
+    }
+
+
+    #console-ui-drag-handles-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: $z-index-drag;
+
+      .drag-handle {
+        position: absolute;
+        background: green;
+        opacity: $dragOpacity;
+
+        &:active {
+          &::after {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: blue;
+            content: "\00a0";
+            z-index: 1;
+            opacity: $dragOpacity;
+          }
+        }
+
+        &.corner {
+          width: $handleWidth;
+          height: $handleWidth;
+
+          &.top-left, &.top-right {
+            top: -2px;
+          }
+
+          &.top-left {
+            left: $handleWidth*-.25;
+            cursor: se-resize;
+          }
+
+          &.top-right {
+            right: $handleWidth*-.25;
+            cursor: sw-resize;
+          }
+
+          &.bottom-right, &.bottom-left {
+            bottom: $handleWidth*-.25;
+          }
+
+          &.bottom-right {
+            right: $handleWidth*-.25;
+            cursor: nw-resize;
+          }
+
+          &.bottom-left {
+            left: $handleWidth*-.25;
+            cursor: ne-resize;
+          }
+
+        }
+
+
+        &.side {
+          background: skyblue;
+
+          &.top, &.bottom {
+            width: calc(100% - #{$handleWidth*2});
+            height: $handleWidth;
+            left: $handleWidth;
+          }
+
+          &.left, &.right {
+            top: $handleWidth;
+            width: $handleWidth;
+            height: calc(100% - #{$handleWidth*2});
+
+            &:active {
+              z-index: $z-index-drag;
+            }
+          }
+
+          &.left {
+            left: $handleWidth*-.75;
+            cursor: e-resize;
+
+          }
+
+          &.right {
+            right: calc(-#{$handleWidth} + 2px);
+            cursor: w-resize;
+
+            &:active {
+
+            }
+          }
+
+          &.top {
+            top: $handleWidth*-.75;
+            cursor: s-resize;
+          }
+
+          &.bottom {
+            bottom: $handleWidth*-.75;
+            cursor: n-resize;
+
+          }
+
+        }
+
+      }
+    }
+  }
+
+}

@@ -1,0 +1,36 @@
+//@import "./node_modules/highlight.js/scss/stackoverflow-dark";
+//@import "01-vendors/highlights-themes/solarized-dark";
+@import "01-vendors/highlights-themes/an-old-hope";
+@import "02-variables/globals";
+@import "03-components/ui/scrollbar";
+@import "spyne-plugin-console";
+@import "03-components/console/spyne-plugin-console-menu";
+@import "03-components/console/spyne-plugin-console-code";
+@import "03-components/console/console-ui/spyne-plugin-console-ui";
+@import "03-components/console/console-ui/spyne-plugin-console-ui-min-max-close";
+@import "03-components/console/console-ui/console-ui-drag-handles";
+@import "03-components/console/console-ui/console-ui-corners";
+
+body{
+  main#spyne-plugin-console{
+    position:relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    max-width: 1920px;
+    align-self: center;
+    justify-self: center;
+    border: 0;
+    margin: 0;
+    border-left:  1px solid #000;
+    border-right: 1px solid #000;
+    #dynamic-app-ui{
+      position: fixed;
+    }
+  }
+
+
+
+}
+

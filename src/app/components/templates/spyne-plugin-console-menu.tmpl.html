@@ -1,0 +1,11 @@
+<div id="console-panel-menu">
+    <ul>
+    <li class="view-all all selected channel-panel-item channel_all console-btn " data-plugin-console-btn-type="consoleMenu" data-console-is-focused="false" data-is-console-item="true"></li>
+
+    {{#}}
+    <li class="channel-panel-item channel_{{channelName}} console-btn" data-plugin-console-btn-type="consoleMenu" data-console-is-focused="true" data-is-console-item="true" data-channel-name="{{channelLower}}">
+        <p>{{channelTitle}}</p>
+    </li>
+    {{/}}
+
+</ul>

@@ -1,0 +1,15 @@
+
+#console-code-display pre::-webkit-scrollbar, .toc-container::-webkit-scrollbar {
+  height:8px;
+  width: 8px;
+}
+
+#console-code-display pre::-webkit-scrollbar-track, .toc-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 16px rgba(220,0,0,0.3);
+}
+
+#console-code-display pre::-webkit-scrollbar-thumb, .toc-container::-webkit-scrollbar-thumb {
+  background-color: $plugin-console-mediumgray;
+  outline: 1px solid $plugin-console-slategray;
+
+}

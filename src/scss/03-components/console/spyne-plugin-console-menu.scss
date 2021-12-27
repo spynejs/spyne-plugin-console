@@ -1,0 +1,84 @@
+#spyne-plugin-console {
+  header{
+    position: relative;
+    width: fit-content;
+    min-height: 40px;
+    margin: 20px 0 0 0;
+
+    h5{
+      position: relative;
+      margin:0;
+      padding: 0;
+      left: 24px;
+      letter-spacing: 1px;
+      color: #fff;
+      opacity: .5;
+      top: 10px;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+
+  .panel-menu {
+    position: relative;
+    user-select: none;
+    overflow: hidden;
+    flex-shrink: 3;
+
+    #console-panel-menu {
+      position: relative;
+      align-self: flex-start;
+      margin-bottom: 1rem;
+
+      ul {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 25px 0 20px;
+        flex-wrap: wrap;;
+        padding: 0;
+        max-width: fit-content;
+        list-style-type: none;
+
+        li {
+          position: relative;
+          text-align: center;
+          cursor: pointer;
+          opacity: .4;
+          pointer-events: all;
+          margin: 4px 0;
+
+          p {
+            position: relative;
+            margin: 0;
+            padding: 0 4px;
+          }
+
+          &:first-child {
+            flex-basis: 100%;
+            align-self: flex-start;
+            text-align: left;
+            margin: 5px 0 10px 0;
+          }
+
+          &:hover {
+            opacity: .8;
+          }
+
+          &.activated {
+            opacity: .8;
+            transition: all .5s ease;
+          }
+
+          &.selected {
+            opacity: 1;
+            pointer-events: none;
+            padding: 0 4px;
+
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+
+#spyne-plugin-console-content-holder {
+  background: map-get($colorMap, "background");
+  #console-ui {
+
+    #console-ui-corners-container {
+      .corner-pin {
+        svg {
+          fill: map-get($colorMap, "liColor");;
+        }
+      }
+    }
+
+    #console-max-min-close {
+
+      ul li {
+        svg {
+          path, rect {
+            fill: map-get($colorMap, "liColor");;
+
+          }
+        }
+      }
+    }
+  }
+
+  .panel-menu {
+
+    header {
+      color: map-get($colorMap, "headlineColor");
+    }
+
+    #console-panel-menu {
+
+      ul {
+
+
+        li {
+          color: map-get($colorMap, "liColor");;
+          border-bottom: 1px solid map-get($colorMap, "liBorderBottomInit");
+
+
+          &:first-child {
+            border-bottom: initial;
+
+            &:before {
+              content: 'VIEW ALL';
+              border-bottom: green;
+            }
+
+            &.selected, &.activated {
+              border-bottom: initial;
+            }
+
+          }
+
+          &.activated {
+            border-bottom: 1px solid map-get($colorMap, "liBorderBottomActivated");
+          }
+
+          &.selected {
+            border-bottom: 1px solid map-get($colorMap, "liBorderBottomSelected");
+            background: map-get($colorMap, "liSelectedBackground");;
+          }
+
+
+        }
+
+      }
+
+    }
+
+  }
+
+  #console-code-display {
+    pre {
+      color: map-get($colorMap, "codeSyntaxColor");
+      background-color: map-get($colorMap, "codeBackground"); // #062027;
+      span {
+        &.key {
+          color: map-get($colorMap, "codeKeyColor");;
+        }
+
+        &.val {
+          color: map-get($colorMap, "codeValColor");;
+        }
+      }
+    }
+  }
+}
+

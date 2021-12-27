@@ -1,0 +1,45 @@
+#console-code-display {
+  position: relative;
+  padding: 5px 0;
+  height: 50%;
+  flex-grow: 3;
+  pointer-events: all;
+
+  pre {
+    position: relative;
+    height: calc(100% - 50px);
+    font-size: .85rem;
+    overflow: auto;
+
+    code {
+      position: relative;
+
+      span.truncator-expand {
+        opacity: .85;
+
+        span.hljs-string {
+          color: greenyellow;
+          cursor: pointer;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      word-break: break-word;
+      white-space: pre-wrap;
+
+    }
+
+    span {
+      &.key {
+      }
+
+      &.val {
+      }
+
+    }
+
+  }
+}

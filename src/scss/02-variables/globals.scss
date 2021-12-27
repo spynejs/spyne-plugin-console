@@ -1,0 +1,81 @@
+
+$plugin-console-s2Blue1: #072F5A;
+$plugin-console-s2Blue2: #C4D7E4;
+$plugin-console-s2Blue3: #0B85FA;
+$plugin-console-s2Blue4: #5A6C89;
+$plugin-console-s2Blue5: #0060C8;
+
+$plugin-console-codeBackground: #002B36;
+
+
+$plugin-console-soloarizedDarkBg: #033641;
+$plugin-console-soloarizedCodeBg: #002B34;
+$plugin-console-solarizedWarm: #6A941F;
+$plugin-console-solarizedBlue: #0C77C7;
+$plugin-console-solarizedNeutral: #839496;
+
+
+$plugin-console-hljsCodeBackground: #232323;
+
+$plugin-console-base03:    #002b36;
+$plugin-console-base02:    #073642;
+$plugin-console-base01:    #586e75;
+$plugin-console-base00:    #657b83;
+$plugin-console-base0:     #839496;
+$plugin-console-base1:     #93a1a1;
+$plugin-console-base2:     #eee8d5;
+$plugin-console-base3:     #fdf6e3;
+$plugin-console-yellow:    #b58900;
+$plugin-console-orange:    #cb4b16;
+$plugin-console-red:       #dc322f;
+$plugin-console-magenta:   #d33682;
+$plugin-console-violet:    #6c71c4;
+$plugin-console-blue:      #268bd2;
+$plugin-console-cyan:      #2aa198;
+$plugin-console-green:     #859900;
+
+$plugin-console-jetBrainsBlue: #7B95FF;
+$plugin-console-jetBrainsWarm: #B58900;
+$plugin-console-jetBrainsNeutral: #587277;
+$plugin-console-winterBackground: #FFFFFF;
+$plugin-console-winterBackground2: #F3F3F3;
+
+$plugin-console-dark-mode: (
+        "headlineColor" : $plugin-console-jetBrainsBlue,
+        "background" : $plugin-console-soloarizedDarkBg,
+        "liColor" : $plugin-console-jetBrainsBlue,
+        "liBorderBottomInit" : #655de700,
+        "liBorderBottomActivated" : $plugin-console-jetBrainsBlue,
+        "liBorderBottomSelected" : $plugin-console-jetBrainsBlue,
+        "liSelectedBackground" : $plugin-console-base03,
+        "codeBackground" : $plugin-console-soloarizedCodeBg,
+        "hljsCodeBackground" : $plugin-console-hljsCodeBackground,
+        "codeSyntaxColor" : $plugin-console-jetBrainsNeutral,
+        "codeKeyColor" :   $plugin-console-jetBrainsBlue,
+        "codeValColor" : $plugin-console-green
+);
+
+
+$plugin-console-light-mode: (
+        "headlineColor" : #000,
+        "background" : $plugin-console-winterBackground2,
+        "liColor" : $plugin-console-blue,
+        "liBorderBottomInit" : $plugin-console-blue,
+        "liBorderBottomActivated" : $plugin-console-blue,
+        "liBorderBottomSelected" : $plugin-console-blue,
+        "liSelectedBackground" : $plugin-console-winterBackground,
+        "codeBackground" : $plugin-console-winterBackground,
+        "codeSyntaxColor" : $plugin-console-base00,
+        "codeKeyColor" :   $plugin-console-base03,
+        "codeValColor" :  $plugin-console-base01
+);
+
+
+// SITEBLUES
+
+$plugin-console-spyneBlueLight: $plugin-console-s2Blue2;//lighten($plugin-console-s1Blue2, 50);// $plugin-console-bBlues5;
+$plugin-console-mediumgray:  $plugin-console-s2Blue4;////$plugin-console-s2Blue3;
+$plugin-console-darkgray:$plugin-console-spyneBlueLight;
+$plugin-console-slategray: orange;
+
+
