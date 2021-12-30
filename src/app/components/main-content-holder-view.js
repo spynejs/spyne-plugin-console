@@ -36,7 +36,15 @@ export class MainContentHolderView extends ViewStream {
   }
 
   resizePanel(w, h) {
-    this.props.el.style['width'] = w;
+    const windowWidth = window.innerWidth - 32;
+    const windowHeight = window.innerHeight - 32;
+
+
+    const width = Math.min(parseInt(w), windowWidth);
+    const height = Math.min(parseInt(h), windowHeight);
+    //console.log('width adjust ',{w,h, windowWidth,windowHeight, width, height})
+
+    this.props.el.style['width'] = width;
     this.props.el.style['height'] = h;
   }
 
