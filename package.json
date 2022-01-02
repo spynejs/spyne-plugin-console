@@ -1,6 +1,6 @@
 {
   "name": "spyne-plugin-console",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "Front end module to view all Channels data",
   "main": "lib/spyne-plugin-console.min.js",
   "module": "src/app/spyne-plugin-console.js",
