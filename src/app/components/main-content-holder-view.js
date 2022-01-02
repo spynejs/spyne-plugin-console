@@ -44,7 +44,7 @@ export class MainContentHolderView extends ViewStream {
     const height = Math.min(parseInt(h), windowHeight);
     //console.log('width adjust ',{w,h, windowWidth,windowHeight, width, height})
 
-    this.props.el.style['width'] = width;
+    this.props.el.style['width'] = `${width}px`;
     this.props.el.style['height'] = h;
   }
 
