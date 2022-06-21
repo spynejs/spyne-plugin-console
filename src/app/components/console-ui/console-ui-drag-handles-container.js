@@ -37,8 +37,10 @@ export class ConsoleUIDragHandlesContainer extends ViewStream {
 
     if (this.props.dragMode===true){
       const {clientX, clientY} = e.event;
-      const {handleType, handleName} = e.payload;
-      this.sendDragEventToConsolePluginChannel({clientX,clientY,handleName, handleType})
+      const {handleType, handleName, isConsoleItem} = e.payload;
+      if (isConsoleItem==='true') {
+        this.sendDragEventToConsolePluginChannel({clientX, clientY, handleName, handleType})
+      }
     }
   }
 

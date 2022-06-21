@@ -14,6 +14,8 @@ export class ChannelSpyneConsolePlugin extends Channel {
 
   onRegistered() {
 
+    console.log("SPYNE CONSOLE PLUGIN ")
+
     const onConfigReturned = (e) => {
       this.props.config = e.payload;
       this.initializeAllChannelListeners();
@@ -143,6 +145,7 @@ export class ChannelSpyneConsolePlugin extends Channel {
 
   initializeAllChannelListeners() {
     const addToAllListener = (channelName) => {
+      console.log("ADD CHANNELS ",channelName);
       this.getChannel(channelName).subscribe(this.onChannelEvent.bind(this));
     };
 
