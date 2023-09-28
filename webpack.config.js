@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackRxjsExternals = require('webpack-rxjs-externals');
 
 const _defaultAssetsDirName = "assets";
 const port = 8076;
@@ -32,14 +33,7 @@ module.exports = (env={mode:"development"})=> {
   if (_isProduction){
     entryFile  = `./src/app/${libraryName}.js`;
     externalsArr = [
-      {
-        gsap: {
-          commonjs: 'gsap',
-          commonjs2: 'gsap',
-          amd: 'gsap',
-          root: 'gsap'
-        }
-      },
+      WebpackRxjsExternals(),
 
       {
         spyne: {
@@ -47,6 +41,15 @@ module.exports = (env={mode:"development"})=> {
           commonjs2: 'spyne',
           amd: 'spyne',
           root: 'spyne'
+        }
+
+      },
+      {
+        ramda: {
+          commonjs: 'ramda',
+          commonjs2: 'ramda',
+          amd: 'ramda',
+          root: 'ramda'
         }
 
       },
