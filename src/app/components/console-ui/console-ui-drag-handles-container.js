@@ -1,5 +1,5 @@
 import {ViewStream} from 'spyne';
-import {ConsoleUIDragHandleView} from './console-ui-drag-hanndle-view';
+import {ConsoleUIDragHandleView} from './console-ui-drag-hanndle-view.js';
 import {range} from 'ramda';
 export class ConsoleUIDragHandlesContainer extends ViewStream {
 

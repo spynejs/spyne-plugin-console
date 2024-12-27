@@ -1,10 +1,11 @@
 import {ViewStream} from 'spyne';
+import ConsoleMaxMinCloseTmpl from './templates/console-max-min-close.tmpl.html';
 
 export class ConsoleUIMaxMinClose extends ViewStream {
 
   constructor(props = {}) {
     props.id='console-max-min-close';
-    props.template = require('./templates/console-max-min-close.tmpl.html');
+    props.template = ConsoleMaxMinCloseTmpl;
     super(props);
 
   }

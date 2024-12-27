@@ -1,10 +1,10 @@
-const css = require('../scss/main.scss');
-import {ChannelSpyneConsolePlugin} from './channels/channel-spyne-console-plugin';
-import {SpynePluginConsoleTraits} from './traits/spyne-plugin-console-traits';
+import '../scss/main.scss'
+import {ChannelSpyneConsolePlugin} from './channels/channel-spyne-console-plugin.js';
+import {SpynePluginConsoleTraits} from './traits/spyne-plugin-console-traits.js';
 import {SpynePlugin, SpyneApp, Channel} from 'spyne';
 import {reject} from 'ramda';
 
-import {MainView} from './components/main-view';
+import {MainView} from './components/main-view.js';
 
 class SpynePluginConsole extends SpynePlugin {
 

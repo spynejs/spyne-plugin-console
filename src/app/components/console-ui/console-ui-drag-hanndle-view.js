@@ -1,6 +1,6 @@
 import {ViewStream} from 'spyne';
-import {SpynePluginConsoleDragHandleTraits} from '../../traits/spyne-plugin-console-drag-handle-traits';
-import {UtilTraits} from '../../traits/util-traits';
+import {SpynePluginConsoleDragHandleTraits} from '../../traits/spyne-plugin-console-drag-handle-traits.js';
+import {UtilTraits} from '../../traits/util-traits.js';
 
 export class ConsoleUIDragHandleView extends ViewStream {
 

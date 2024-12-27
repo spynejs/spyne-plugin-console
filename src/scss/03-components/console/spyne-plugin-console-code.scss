@@ -14,6 +14,9 @@
     code {
       position: relative;
 
+      word-break: break-word;
+      white-space: pre-wrap;
+
       span.truncator-expand {
         opacity: .85;
 
@@ -27,8 +30,6 @@
         }
       }
 
-      word-break: break-word;
-      white-space: pre-wrap;
 
     }
 

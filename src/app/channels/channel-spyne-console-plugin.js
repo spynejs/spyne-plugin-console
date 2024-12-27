@@ -1,6 +1,6 @@
 import {Channel, ChannelPayloadFilter} from 'spyne';
-import {SpynePluginConsoleTraits} from '../traits/spyne-plugin-console-traits';
-import {ConsoleChannelPayloadsTraits} from '../traits/console-channel-payloads-traits';
+import {SpynePluginConsoleTraits} from '../traits/spyne-plugin-console-traits.js';
+import {ConsoleChannelPayloadsTraits} from '../traits/console-channel-payloads-traits.js';
 import {propEq} from 'ramda';
 
 export class ChannelSpyneConsolePlugin extends Channel {
@@ -128,7 +128,7 @@ export class ChannelSpyneConsolePlugin extends Channel {
   onChannelEvent(e) {
     const {action, payload, channelName, srcElement, event} = e;
     const isConsoleItem = channelName === 'CHANNEL_UI' &&
-        propEq('isConsoleItem', 'true')(payload);
+        propEq('true', 'isConsoleItem')(payload);
     if (isConsoleItem) {
       return;
     }

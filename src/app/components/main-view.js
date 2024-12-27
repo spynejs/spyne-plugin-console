@@ -1,6 +1,6 @@
 import {ViewStream} from 'spyne';
-import {MainContentHolderView} from './main-content-holder-view';
-import {SpynePluginConsoleTraits} from '../traits/spyne-plugin-console-traits';
+import {MainContentHolderView} from './main-content-holder-view.js';
+import {SpynePluginConsoleTraits} from '../traits/spyne-plugin-console-traits.js';
 
 export class MainView extends ViewStream {
 

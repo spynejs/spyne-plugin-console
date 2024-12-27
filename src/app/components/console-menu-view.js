@@ -1,5 +1,6 @@
 import {ViewStream} from 'spyne';
-import {SpynePluginConsoleTraits} from '../traits/spyne-plugin-console-traits';
+import {SpynePluginConsoleTraits} from '../traits/spyne-plugin-console-traits.js';
+import ConsoleMenuTmpl from './templates/spyne-plugin-console-menu.tmpl.html';
 
 export class ConsoleMenuView extends ViewStream {
 
@@ -7,7 +8,7 @@ export class ConsoleMenuView extends ViewStream {
     props.id = 'console-menu';
     props.class = 'panel-menu';
     props.data = SpynePluginConsoleTraits.spyneConsole$GetMenuData(props.config.allChannelsArr);
-    props.template = require('./templates/spyne-plugin-console-menu.tmpl.html');
+    props.template = ConsoleMenuTmpl;
     props.currentChannel = undefined;
     super(props);
   }

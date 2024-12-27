@@ -1,9 +1,9 @@
 import {ViewStream, DomElement} from 'spyne';
-import {SpynePluginConsoleDragHandleTraits} from '../traits/spyne-plugin-console-drag-handle-traits';
-import {ConsoleMenuView} from './console-menu-view';
-import {ConsoleCodeView} from './console-code-view';
-import {ConsoleUI} from './console-ui/console-ui';
-import {ConsoleUIResizeTraits} from '../traits/console-ui-resize-traits';
+import {SpynePluginConsoleDragHandleTraits} from '../traits/spyne-plugin-console-drag-handle-traits.js';
+import {ConsoleMenuView} from './console-menu-view.js';
+import {ConsoleCodeView} from  './console-code-view.js';
+import {ConsoleUI} from './console-ui/console-ui.js';
+import {ConsoleUIResizeTraits} from '../traits/console-ui-resize-traits.js';
 
 export class MainContentHolderView extends ViewStream {
 

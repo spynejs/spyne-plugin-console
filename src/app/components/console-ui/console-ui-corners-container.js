@@ -1,11 +1,12 @@
 import {ViewStream} from 'spyne';
+import UICornersTmpl from './templates/console-ui-corners.tmpl.html';
 
 export class ConsoleUICornersContainer extends ViewStream {
 
   constructor(props = {}) {
     props.id='console-ui-corners-container';
     props.data = ConsoleUICornersContainer.getCornersData();
-    props.template = require('./templates/console-ui-corners.tmpl.html');
+    props.template = UICornersTmpl;
     super(props);
   }
 

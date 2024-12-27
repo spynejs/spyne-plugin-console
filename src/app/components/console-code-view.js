@@ -1,7 +1,7 @@
 import {ViewStream} from 'spyne';
-import {ConsoleChannelPayloadsTraits} from '../traits/console-channel-payloads-traits';
+import {ConsoleChannelPayloadsTraits} from '../traits/console-channel-payloads-traits.js';
 import {clone} from 'ramda';
-import {JsonTruncator} from '../traits/json-truncator';
+import {JsonTruncator} from '../traits/json-truncator.js';
 import hljs from 'highlight.js';
 
 export class ConsoleCodeView extends ViewStream {
@@ -50,7 +50,16 @@ export class ConsoleCodeView extends ViewStream {
 
   }
 
+  checkForDatasetHighlight(){
+    if (this.props.el$('code').el.dataset.highlighted){
+      delete this.props.el$('code').el.dataset.highlighted;
+    }
+  }
+
   onConsoleDataEvent(e) {
+
+    this.checkForDatasetHighlight();
+
     const expandTruncatedCachedData = e.action === 'CHANNEL_SPYNE_CONSOLE_PLUGIN_EXPAND_CACHED_DATA_EVENT';
     const {consoleChannelName, consoleChannelData} = e.payload;
     const {cachedEl} = consoleChannelData;
@@ -79,6 +88,9 @@ export class ConsoleCodeView extends ViewStream {
       if (expandTruncatedCachedData === false) {
         const codeStr = escape(JSON.stringify(decycledObj, null, 4));
         this.props.el$('code').el.innerHTML = codeStr;
+        this.checkForDatasetHighlight();
+
+
         hljs.highlightElement(this.props.el$('code').el);
       } else {
         this.props.el$('code').el.innerHTML = JSON.stringify(decycledObj, null, 4);

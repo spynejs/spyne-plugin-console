@@ -1,7 +1,9 @@
 import mockData from './static/data/mock-data.json';
-const {SpyneApp, ChannelFetch} = require('spyne');
-import {SpynePluginConsole} from './app/spyne-plugin-console';
-const R = require('ramda');
+//const {SpyneApp, ChannelFetch} = require('spyne');
+import {SpyneApp, ChannelFetch} from 'spyne';
+import {SpynePluginConsole} from './app/spyne-plugin-console.js';
+
+import * as R from 'ramda';
 document.body.style.background = "#333";
 window.R = R;
 const config = {
