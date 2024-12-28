@@ -11,7 +11,6 @@ class SpynePluginConsole extends SpynePlugin {
   constructor(props = {}) {
     props['name'] = SpynePluginConsoleTraits.spyneConsole$GetPluginName();
     super(props);
-    SpyneApp.registerChannel(new Channel('CHANNEL_PLUGIN_CONSOLE_CONFIG', {data: this.props.config, sendCachedPayload: true}));
   }
 
   defaultConfig() {
@@ -55,6 +54,7 @@ class SpynePluginConsole extends SpynePlugin {
   onRegistered() {
     const {pluginName} = this.props;
     this.updateConfig();
+    SpyneApp.registerChannel(new Channel('CHANNEL_PLUGIN_CONSOLE_CONFIG', {data: this.props.config, sendCachedPayload: true}));
     SpyneApp.registerChannel(new ChannelSpyneConsolePlugin(undefined, {pluginName}));
   }
 

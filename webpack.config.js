@@ -1,14 +1,8 @@
-// webpack.config.js
 import path from 'path'
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import WebpackRxjsExternals from 'webpack-rxjs-externals'
-
-// If you need __dirname in an ESM context, uncomment:
-// import { fileURLToPath } from 'url';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
 
 const _defaultAssetsDirName = 'assets'
 const port = 8076

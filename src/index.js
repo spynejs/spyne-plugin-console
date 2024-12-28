@@ -27,4 +27,5 @@ spyneApp.init(config);
 spyneApp.registerChannel(new ChannelFetch("CHANNEL_FETCH_MOCK_DATA", {url:mockData}));
 
 const spyneConsolePlugin = new SpynePluginConsole(consolePluginConfig);
+spyneApp.registerPlugin(spyneConsolePlugin);
 
