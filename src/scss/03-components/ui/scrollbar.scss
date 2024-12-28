@@ -1,3 +1,5 @@
+@use "../../02-variables/globals";
+
 
 #console-code-display pre::-webkit-scrollbar, .toc-container::-webkit-scrollbar {
   height:8px;
@@ -9,7 +11,7 @@
 }
 
 #console-code-display pre::-webkit-scrollbar-thumb, .toc-container::-webkit-scrollbar-thumb {
-  background-color: $plugin-console-mediumgray;
-  outline: 1px solid $plugin-console-slategray;
+  background-color: globals.$plugin-console-mediumgray;
+  outline: 1px solid globals.$plugin-console-slategray;
 
 }

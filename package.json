@@ -1,6 +1,6 @@
 {
   "name": "spyne-plugin-console",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Front end module to view all Channels data",
   "main": "lib/spyne-plugin-console.min.js",
   "module": "src/app/spyne-plugin-console.js",
@@ -10,7 +10,8 @@
     "start": "webpack serve --open --mode development --env dev",
     "init": "npm install && npm i -D mocha-loader --force",
     "build": "webpack --mode production --env build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate-sass": "sass-migrator module --migrate-deps src/scss/main.scss"
   },
   "dependencies": {
     "flatted": "^3.3.1",
@@ -39,6 +40,7 @@
     "requirejs": "^2.3.7",
     "sass": "^1.78.0",
     "sass-loader": "^16.0.1",
+    "sass-migrator": "^2.3.0",
     "sinon": "^18.0.0",
     "style-loader": "^4.0.0",
     "webpack": "^5.94.0",

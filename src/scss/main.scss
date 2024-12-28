@@ -1,15 +1,15 @@
 //@import "./node_modules/highlight.js/scss/stackoverflow-dark";
 //@import "01-vendors/highlights-themes/solarized-dark";
-@import "01-vendors/highlights-themes/an-old-hope";
-@import "02-variables/globals";
-@import "03-components/ui/scrollbar";
-@import "spyne-plugin-console";
-@import "03-components/console/spyne-plugin-console-menu";
-@import "03-components/console/spyne-plugin-console-code";
-@import "03-components/console/console-ui/spyne-plugin-console-ui";
-@import "03-components/console/console-ui/spyne-plugin-console-ui-min-max-close";
-@import "03-components/console/console-ui/console-ui-drag-handles";
-@import "03-components/console/console-ui/console-ui-corners";
+@use "01-vendors/highlights-themes/an-old-hope";
+@use "02-variables/globals";
+@use "03-components/ui/scrollbar";
+@use "spyne-plugin-console";
+@use "03-components/console/spyne-plugin-console-menu";
+@use "03-components/console/spyne-plugin-console-code";
+@use "03-components/console/console-ui/spyne-plugin-console-ui";
+@use "03-components/console/console-ui/spyne-plugin-console-ui-min-max-close";
+@use "03-components/console/console-ui/console-ui-drag-handles";
+@use "03-components/console/console-ui/console-ui-corners";
 
 body{
   main#spyne-plugin-console{
