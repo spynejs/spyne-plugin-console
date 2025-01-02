@@ -38,14 +38,29 @@ export class MainContentHolderView extends ViewStream {
   resizePanel(w, h) {
     const windowWidth = window.innerWidth - 32;
     const windowHeight = window.innerHeight - 32;
+    console.log("W IS ", w);
 
+    let computedWidth;
+    if (w.endsWith("vw")) {
+      // Convert vw to a pixel value
+      const vwValue = parseFloat(w); // e.g., "50vw" -> 50
+      computedWidth = (window.innerWidth * vwValue) / 100;
+    } else if (w.endsWith("px")) {
+      // Extract numeric value from "px" string
+      computedWidth = parseInt(w, 10); // e.g., "320px" -> 320
+    } else {
+      // Fallback: assume it's already a numeric pixel value
+      computedWidth = parseInt(w, 10);
+    }
 
-    const width = Math.min(parseInt(w), windowWidth);
-    const height = Math.min(parseInt(h), windowHeight);
-    //console.log('width adjust ',{w,h, windowWidth,windowHeight, width, height})
+    // Clamp the computed width so it doesn't exceed windowWidth
+    const width = Math.min(computedWidth, windowWidth);
 
-    this.props.el.style['width'] = `${width}px`;
-    this.props.el.style['height'] = h;
+    // For the height, keep the same approach
+    const height = Math.min(parseInt(h, 10), windowHeight);
+
+    this.props.el.style.width = `${width}px`;
+    this.props.el.style.height = h;
   }
 
   onCornerPinEvent(e) {
