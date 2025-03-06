@@ -38,7 +38,7 @@ export class MainContentHolderView extends ViewStream {
   resizePanel(w, h) {
     const windowWidth = window.innerWidth - 32;
     const windowHeight = window.innerHeight - 32;
-    console.log("W IS ", w);
+    //console.log("W IS ", w);
 
     let computedWidth;
     if (w.endsWith("vw")) {

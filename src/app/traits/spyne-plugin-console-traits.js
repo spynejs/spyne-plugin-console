@@ -37,7 +37,9 @@ export class SpynePluginConsoleTraits extends SpyneTrait {
 
 
   static spyneConsole$SetAvailableChannels(spyneApp, excludeChannelsArr=['CHANNEL_SPYNE_CONSOLE_PLUGIN', "DISPATCHER"]){
-    const app = spyneApp || prop('Spyne', window);
+   // const app = spyneApp || prop('Spyne', window);
+    //console.log("APP IS ",SpyneAppProperties);
+
     const allChannelsArr = SpyneAppProperties.listRegisteredChannels();
     const channelsReducer = (acc, val) =>{
       if (excludeChannelsArr.indexOf(val)<0){
