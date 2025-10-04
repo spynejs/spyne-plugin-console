@@ -10,6 +10,7 @@ const config = {
   debug:true,
   channels: {
     WINDOW: {
+      "events" : ["mousemove"]
     }
   }
 }

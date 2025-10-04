@@ -2,6 +2,8 @@ $borderRadius: 6px;
 @use "sass:map";
 //@use "03-components/console/console-color-theme";
 //@use "02-variables/globals";
+//@use "01-vendors/highlights-themes/an-old-hope";
+@use "01-vendors/hljs-theme" as *;
 
 
 @use "02-variables/globals" as colors;
@@ -17,6 +19,7 @@ $borderRadius: 6px;
   height: 100%;
   pointer-events: none;
   //overflow: hidden;
+  @include cms-hljs-theme;
 
   #spyne-plugin-console-content-holder {
     box-sizing: border-box;
