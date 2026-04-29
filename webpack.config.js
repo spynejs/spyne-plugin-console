@@ -11,7 +11,6 @@ export default (env = { mode: 'development', build: false }) => {
   const mode = env.mode || 'development'
   const _isProduction = env.build === true
 
-  // USE '/./' FOR RELATIVE DOMAIN PATHS
   const _relativeRoot = './'
   const _publicPath = _isProduction ? _relativeRoot : '/'
   const _assetsFolder = _isProduction ? `${_defaultAssetsDirName}/` : ''
@@ -20,9 +19,6 @@ export default (env = { mode: 'development', build: false }) => {
   const libraryName = 'spyne-plugin-console'
   let externalsArr = []
 
-  // =================================
-  // LIBRARY OPTIONS
-  // =================================
   if (_isProduction) {
     entryFile = `./src/app/${libraryName}.js`
     externalsArr = [
@@ -34,65 +30,29 @@ export default (env = { mode: 'development', build: false }) => {
           amd: 'spyne',
           root: 'spyne'
         }
-      },
-      {
-        ramda: {
-          commonjs: 'ramda',
-          commonjs2: 'ramda',
-          amd: 'ramda',
-          root: 'ramda'
-        }
-      },
-      {
-        'fast-json-stable-stringify': {
-          commonjs: 'fast-json-stable-stringify',
-          commonjs2: 'fast-json-stable-stringify',
-          amd: 'fast-json-stable-stringify',
-          root: 'fast-json-stable-stringify'
-        }
-      },
-      {
-        flatted: {
-          commonjs: 'flatted',
-          commonjs2: 'flatted',
-          amd: 'flatted',
-          root: 'flatted'
-        }
       }
     ]
   }
-  // =================================
 
   const config = {
     mode,
     stats: _isProduction ? 'none' : 'all',
-
-    // Your entry depends on whether you're building the library or running dev
     entry: entryFile,
-
-    // Don’t bundle RxJS, Spyne, Ramda, etc. if in production mode
     externals: externalsArr,
 
     output: {
-      // For local dev, place output in assets/js/[name].js
-      // For a production library build, produce spyne-plugin-console.min.js
       filename: _isProduction ? `${libraryName}.min.js` : 'assets/js/[name].js',
-
-      // Use whatever output path you prefer
       path: path.resolve(process.cwd(), 'lib'),
       clean: true,
-
-      // If building a library, specify how you want it exposed
+      publicPath: _publicPath,
       library: {
         name: libraryName,
         type: 'umd'
       }
     },
 
-    // For local dev, inline sourcemaps can be handy
     devtool: _isProduction ? false : 'inline-cheap-source-map',
 
-    // Webpack dev server settings for local testing
     devServer: {
       static: {
         directory: 'src'
@@ -101,21 +61,21 @@ export default (env = { mode: 'development', build: false }) => {
       port
     },
 
-    // Use a function to generate plugin instances
     plugins: getWebpackPlugins(_isProduction, _assetsFolder),
 
-    // Example optimization config
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          common: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendor',
-            chunks: 'all'
+    optimization: _isProduction
+        ? {}
+        : {
+          splitChunks: {
+            cacheGroups: {
+              common: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendor',
+                chunks: 'all'
+              }
+            }
           }
-        }
-      }
-    },
+        },
 
     module: {
       rules: [
@@ -128,7 +88,6 @@ export default (env = { mode: 'development', build: false }) => {
           }
         },
         {
-          // SCSS/CSS handling
           test: /\.(sa|sc|c)ss$/,
           use: [
             !_isProduction ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -142,12 +101,10 @@ export default (env = { mode: 'development', build: false }) => {
           ]
         },
         {
-          // Images
           test: /\.(png|jpe?g|gif|svg)$/i,
           type: 'asset'
         },
         {
-          // JSON data files
           test: /\.json$/,
           type: 'javascript/auto',
           use: [
@@ -182,11 +139,9 @@ export default (env = { mode: 'development', build: false }) => {
   return config
 }
 
-// Helper function to produce your plugin array
 function getWebpackPlugins(_isProduction, _assetsFolder) {
   const miniCssPlugin = () =>
       new MiniCssExtractPlugin({
-        // final CSS filename
         filename: `${_assetsFolder}/css/main.css`
       })
 
@@ -199,8 +154,6 @@ function getWebpackPlugins(_isProduction, _assetsFolder) {
     minify: false
   })
 
-  // In production, do not generate an HTML page, just define constants & extract CSS
-  // In dev, generate an index.html for local testing
   return _isProduction
       ? [definePlugin, miniCssPlugin()]
       : [htmlPlugin, definePlugin]

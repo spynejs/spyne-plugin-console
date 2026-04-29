@@ -1,6 +1,6 @@
 {
   "name": "spyne-plugin-console",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Front end module to view all Channels data",
   "main": "lib/spyne-plugin-console.min.js",
   "module": "src/app/spyne-plugin-console.js",
@@ -17,8 +17,10 @@
     "flatted": "^3.3.1",
     "highlight.js": "^11.10.0",
     "ramda": "^0.30.1",
-    "rxjs": "^7.8.1",
-    "spyne": "^0.21.2"
+    "rxjs": "^7.8.1"
+  },
+  "peerDependencies": {
+    "spyne": "^0.21.0"
   },
   "devDependencies": {
     "chai": "^5.1.1",
@@ -36,18 +38,25 @@
     "karma-sinon": "^1.0.5",
     "karma-webpack": "^5.0.1",
     "mini-css-extract-plugin": "^2.9.1",
-    "mocha": "^10.7.3",
+    "mocha": "^11.7.5",
     "requirejs": "^2.3.7",
     "sass": "^1.78.0",
     "sass-loader": "^16.0.1",
     "sass-migrator": "^2.3.0",
     "sinon": "^18.0.0",
+    "spyne": "^0.21.2",
     "style-loader": "^4.0.0",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-middleware": "^7.4.2",
     "webpack-dev-server": "^5.1.0",
     "webpack-rxjs-externals": "^2.0.0"
+  },
+  "overrides": {
+    "mocha": {
+      "serialize-javascript": "^7.0.4",
+      "diff": "^8.0.2"
+    }
   },
   "repository": {
     "type": "git",
